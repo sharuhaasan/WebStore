@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="navigation">
+      <a href="{% url 'user' %}">Back to User</a>
+  </div>
+
+  <div class="content">
+    <h2>App Download</h2>
+    <div class="app-details">
+      <h4>{{ app.name }}</h4>
+      <img src="{{ app.picture.url }}" alt="{{ app.name }} Picture">
+      <p>Points: {{ app.points }}</p>
+      <p>App Link: <a href="{{ app.link }}">{{ app.link }}</a></p>
+      <p>Category: {{ app.category }}</p>
+    </div>
+
+    <h3>Upload Screenshot</h3>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.media }}
+      <input type="hidden" name="app_id" value="{{ app.id }}">
+      {{ form.screenshot }}
+      <button type="submit">Upload Screenshot</button>
+    </form>
+
+    {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+          <div class="alert alert-success">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

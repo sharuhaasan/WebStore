@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}</h2>
+  <h3>App Details</h3>
+  {% for app, completed in app_details %}
+    <div class="app-details">
+      <h4>{{ app.name }}</h4>
+      <img src="{{ app.picture.url }}" alt="{{ app.name }} Picture">
+      <p>Points: {{ app.points }}</p>
+      <input type="hidden" name="app_id" value="{{ app.id }}">
+      {% if completed %}
+        <p>Task Completed:Yes</p>
+      {% else %}
+        <p>Task Completed:No</p>
+        <a href="{% url 'screenshot' %}?app_id={{ app.id }}">Download</a>
+      {% endif %}
+    </div>
+  {% empty %}
+    <p>No apps available</p>
+  {% endfor %}
+
+  <div class="navigation">
+    <ul>
+      <li><a href="{% url 'profile' %}">Profile</a></li>
+      <li><a href="{% url 'task' %}">Tasks</a></li>
+      <li><a href="{% url 'points' %}">Points</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </div>
+{% endblock %}

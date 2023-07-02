@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% if user_profile %}
+    <h2>User Details</h2>
+    <p>Name: {{ user_profile.name }}</p>
+    <p>Email: {{ user_profile.email }}</p>
+    <p>Phone Number: {{ user_profile.phone_number }}</p>
+  {% else %}
+    <h3>User Profile Details</h3>
+    <p>No profile details found.</p>
+  {% endif %}
+  <a href="{% url 'user' %}">Back to User</a>
+{% endblock %}

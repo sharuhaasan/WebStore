@@ -1,0 +1,159 @@
+/* CSS for the dashboard */
+
+
+
+.form-container {
+  width: 400px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="file"] {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width:350px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  width:200px;
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 0.5;
+  background-color: #f4f4f4;
+  padding-left: 0px;
+}
+
+.content {
+  flex: 1.5;
+  padding: 0px;
+  padding-right:200px;
+  padding-left:250px;
+}
+
+
+/* CSS for the left-side navigation */
+/* CSS for the left-side navigation */
+/* CSS Styling for the App Details page */
+
+.app-details {
+  margin-bottom: 20px;
+  margin-left:300px;
+  margin-right:300px;
+  margin-center;
+  flex:1.5px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  border-width:1px;
+
+}
+h3{
+  text-align:center
+}
+
+.app-details h4 {
+  font-size: 26px;
+  margin-left:-400px;
+  margin-top: 0;
+}
+
+.app-details img {
+  margin-top: -100px;
+  width: 100px;
+  height: auto;
+}
+
+.app-details p {
+  margin: 10px 0;
+}
+
+.details-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #337ab7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.navigation ul {
+  display:flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.navigation li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navigation li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.navigation li a:hover {
+  color: #337ab7;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#fofofo;
+  }
+
+  .navigation {
+    flex:0.5;
+    float:left;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .app-details {
+    text-align: center;
+
+  }

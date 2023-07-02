@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Welcome, {{ user.username }}</h2>
+<div class="dashboard">
+  <div class="sidebar">
+    <h2>APPS</h2>
+    <ul>
+      {% for app in apps %}
+        <li>{{ app.name }} - Points: {{ app.points }}</li>
+      {% empty %}
+        <li>No apps available</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+  <div class="content">
+    <h2>Add Android App</h2>
+    <form method="POST" action="{% url 'admin_home' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="name">App Name:</label>
+      <input type="text" id="name" name="name">
+      <br>
+      <label for="link">Link:</label>
+      <input type="url" id="link" name="link">
+      <br>
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="category">
+      <br>
+      <label for="picture">Picture:</label>
+      <input type="file" id="picture" name="picture">
+      <br>
+      <label for="points">Points:</label>
+      <input type="number" id="points" name="points">
+      <br>
+      <button type="submit">Add App</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

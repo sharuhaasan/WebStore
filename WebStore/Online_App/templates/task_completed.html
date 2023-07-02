@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Task Completed</h2>
+  {% if tasks_completed %}
+    <p>Total Tasks Completed: {{ tasks_completed }}</p>
+  {% else %}
+    <h3>No tasks completed yet.</h3>
+  {% endif %}
+
+  <ul>
+    {% for app_name in app_details %}
+      <li>{{ app_name }}</li>
+    {% empty %}
+      <li>No apps available</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'user' %}">Back to User</a>
+{% endblock %}
